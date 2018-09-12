@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: api-test:latest
+    ports:
+     - "8080:80"
+  rabitmq:
+    image: rabbitmq:3-management-alpine
+    environment:
+      - RABBITMQ_ERLANG_COOKIE='abioka'
+    ports:
+      - "15672:15672"
+      - "5672:5672"
